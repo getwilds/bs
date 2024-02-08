@@ -4,11 +4,31 @@
 \alias{button}
 \title{Button}
 \usage{
-button(text, class = "primary", role = "button", href = NULL)
+button(text, class = "primary", href = NULL)
+}
+\arguments{
+\item{text}{(character) the text to put in the button}
+
+\item{class}{(character) button class, e.g., primary, success, danger}
+
+\item{href}{(character) a page or url to link to. optional}
+}
+\value{
+a \code{glue} string
 }
 \description{
 Button
 }
+\details{
+\itemize{
+\item \code{role="button"} is used when \code{href} is not NULL
+\item if \code{href} is supplied a button of the form \verb{<a>} is used, while
+if \code{href} is not supplied a button of the form \verb{<button>} is used
+}
+}
 \examples{
 button("Hello World")
+button("Danger World!", class = "danger")
+button("<i class=\"fa-solid fa-box-open\"></i> Hello World")
+button("Hello World", href = "help.html")
 }
